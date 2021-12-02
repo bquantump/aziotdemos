@@ -17,7 +17,7 @@ from builtins import input
 # Using the Azure CLI:
 # az iot hub show-connection-string --hub-name {your iot hub name} --policy-name service
 CONNECTION_STRING = os.environ['IOT_CONNECTION_STRING']
-DEVICE_ID = "pylocaltest"
+DEVICE_ID = "rasptest"
 
 # Details of the direct method to call.
 METHOD_NAME = "SetTelemetryInterval"
@@ -27,6 +27,7 @@ def iothub_devicemethod_sample_run():
     try:
         registry_manager = IoTHubRegistryManager(CONNECTION_STRING)
         deviceMethod = CloudToDeviceMethod(method_name=METHOD_NAME, payload=METHOD_PAYLOAD)
+        print('sent')
         response = registry_manager.invoke_device_method(DEVICE_ID, deviceMethod)
 
         print ( "" )

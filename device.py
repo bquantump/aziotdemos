@@ -16,7 +16,7 @@ TEMPERATURE = 20.0
 HUMIDITY = 60
 MSG_TXT = '{{"temperature": {temperature},"humidity": {humidity}}}'
 
-INTERVAL = 10
+INTERVAL = 15
 
 
 def create_client():
@@ -29,6 +29,7 @@ def create_client():
             try:
                 global INTERVAL
                 INTERVAL = int(method_request.payload)
+                print(f"updating poll interval to {INTERVAL }s ...")
             except ValueError:
                 response_payload = {"Response": "Invalid parameter"}
                 response_status = 400

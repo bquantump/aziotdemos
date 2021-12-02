@@ -1,0 +1,18 @@
+{
+    "@id": "dtmi:example:Rasppi;2",
+    "@type": "Interface",
+    "displayName": "Raspberry",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "BlinkState",
+        "schema": "boolean"
+      },
+      {
+        "@type": "Property",
+        "name": "Name",
+        "schema": "string"
+      }
+    ],
+    "@context": "dtmi:dtdl:context;2"
+  }
